@@ -1,4 +1,5 @@
 import { getAllLeads } from '@/lib/data';
+import { getStaffSession } from '@/lib/auth';
 import { BrandLogo } from '@/components/BrandLogo';
 import { SidebarNav } from '@/components/SidebarNav';
 import { UserProfileBadge } from '@/components/UserProfileBadge';
@@ -9,7 +10,10 @@ export default async function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const contacts = await getAllLeads();
+  const [contacts, session] = await Promise.all([
+    getAllLeads(),
+    getStaffSession(),
+  ]);
 
   return (
     <div className="flex min-h-screen bg-slate-950 text-slate-100">
@@ -23,8 +27,8 @@ export default async function DashboardLayout({
         {/* Sidebar Navigation */}
         <SidebarNav />
 
-        {/* User Profile Badge at bottom */}
-        <UserProfileBadge />
+        {/* User Profile Badge at bottom with Logout */}
+        <UserProfileBadge session={session} />
       </aside>
 
       {/* Main Content Area */}
