@@ -191,7 +191,11 @@ DECLARE
 BEGIN
     -- Seed Staff Profile
     INSERT INTO profiles (email, full_name, role)
-    VALUES ('tariqul@arrowsolutions.com', 'Kazi Tariqul Islam', 'admin')
+    VALUES ('admin@arrowsolutions.com', 'Md. Sabbir Ahammed Shifat', 'admin')
+    ON CONFLICT (email) DO UPDATE SET full_name = 'Md. Sabbir Ahammed Shifat';
+
+    INSERT INTO profiles (email, full_name, role)
+    VALUES ('shifat@arrowsolutions.com', 'Md. Sabbir Ahammed Shifat', 'admin')
     ON CONFLICT (email) DO NOTHING;
 
     -- Seed Contacts (BTL, Digital, IT, Event)

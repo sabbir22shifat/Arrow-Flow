@@ -250,11 +250,11 @@ export function PrintInvoiceModal({ isOpen, onClose, invoice }: PrintInvoiceModa
               <p className="text-[10px] text-slate-400">Received & Approved</p>
             </div>
             <div>
-              <div className="h-10 border-b border-slate-700/60 mx-auto w-36 mb-1 flex items-end justify-center pb-1">
-                <span className="text-xs text-sky-400 font-mono font-semibold">Tariqul Islam</span>
+              <div className="h-10 border-b border-slate-700/60 mx-auto w-44 mb-1 flex items-end justify-center pb-1">
+                <span className="text-xs text-sky-400 font-mono font-semibold">Md. Sabbir Ahammed Shifat</span>
               </div>
-              <p className="font-medium text-slate-300">Arrow Solutions</p>
-              <p className="text-[10px] text-slate-400">Authorized Financial Signatory</p>
+              <p className="font-semibold text-slate-200">Md. Sabbir Ahammed Shifat</p>
+              <p className="text-[10px] text-sky-400 font-medium">Chief Executive Officer (CEO) • Arrow Solutions</p>
             </div>
           </div>
         </div>
